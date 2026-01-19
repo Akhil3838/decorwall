@@ -67,6 +67,9 @@ function page() {
             <li className="text-white">
               <a href="/services">Services</a>
             </li>
+            <li className="text-white">
+              <a href="/catalogue">Catalogue</a>
+            </li>
              <li className="text-white">
               <a  href="/shop">Shop</a>
             </li>
@@ -94,7 +97,7 @@ function page() {
               alt="logo"
               className="icon"
             />
-            <p>© 2021 Hellix. All rights reserved.</p>
+            <p>© 2026 Decorwall. All rights reserved.</p>
           </div>
         </div>
       </div>
@@ -611,7 +614,7 @@ function page() {
               </div>
             </div>
   
-            <div className="col-xl-3 col-lg-4 col-sm-6">
+            {/* <div className="col-xl-3 col-lg-4 col-sm-6">
               <div className="shopCard text-center">
                 <div className="shopCard__image ratio ratio-29:33">
                   <img className="ratio-img" src="img/shop/products/3.jpg" alt="Product image" />
@@ -799,7 +802,7 @@ function page() {
                   <div className="shopCard__price text-sm text-dark mt-8">$350.00</div>
                 </div>
               </div>
-            </div>
+            </div> */}
   
           </div>
         </div>

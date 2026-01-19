@@ -161,7 +161,6 @@ function page() {
 {/* header end */}
   
   
-  
     <div className="content-wrapper  js-content-wrapper">
       
       <aside className="sidebar js-sidebar">
@@ -317,10 +316,10 @@ function page() {
                   explore the features
                 </div>
                 <div className="page-masthead__back_title">
-                  Contact Us
+                 Catalogue
                 </div>
                 <h1 className="page-masthead__title text-white">
-                 Contact Us
+                 Catalogue
                 </h1>
               </div>
             </div>
@@ -343,7 +342,7 @@ function page() {
                   href="#"
                   className="page-masthead-bread__item"
                 >
-                  Contact Us
+                 Our Products
                 </a>
               </div>
             </div>
@@ -353,9 +352,8 @@ function page() {
       </div>
     </section>
     
-    {/* section end */}
-
-        <section className="layout-pt-md layout-pb-md bg-dark">
+    
+    <section className="layout-pt-md layout-pb-md bg-dark">
       <div className="container">
     
         <div className="row justify-content-between">
@@ -564,144 +562,255 @@ function page() {
     
       </div>
     </section>
+    
 
 
-    <section className="layout-pt-lg layout-pb-xl md:pb-64">
-  <div className="container">
-    <div className="row no-gutters">
-      {/* Map */}
-      <div className="col-xl-7 col-lg-7 z-1">
-        <div id="map" className="map ratio ratio-1:1"></div>
-      </div>
-
-      {/* Contact Details */}
-      <div className="col-xl-4 col-lg-4 offset-lg-1">
-        <div className="md:pt-40 md:pb-40">
-          <div className="sectionHeading -left-line">
-            <span className="sectionHeading__subtitle">
-              OUR CONTACT DETAILS
-            </span>
-            <h2 className="sectionHeading__title">
-              Let's Start a Project
-            </h2>
+      <section className="layout-pt-md layout-pb-md">
+    <div className="container">
+      <div className="row">
+        <div className="col-12">
+          <div className="d-flex justify-content-between">
+            <div className="text-sm text-grey">Showing 1–9 of 25 results</div>
+            <div className="text-sm text-grey">Sort by latest</div>
           </div>
-
-         <div className="text-sm text-black leading-4xl mt-48 md:mt-16">
-  <p>T: 9638812342</p>
-  <p>M: mydecowall14@gmail.com</p>
-  <br />
-  <p>A: 8, Navnidhi Avenue, Gurukul</p>
-  <p>Ahmedabad</p>
-</div>
-
-
-          <div className="sectionHeading__button mt-24 md:mt-20">
-            <a href="#" className="button -simple text-black">
-              GET DIRECTIONS
-            </a>
-          </div>
-
-          <div className="socialsSection mt-24">
-            <a href="#" className="text-accent">
-              <i className="fa fa-facebook" aria-hidden="true"></i>
-            </a>
-            <a href="#" className="text-accent">
-              <i className="fa fa-twitter" aria-hidden="true"></i>
-            </a>
-            <a href="#" className="text-accent">
-              <i className="fa fa-instagram" aria-hidden="true"></i>
-            </a>
-            <a href="#" className="text-accent">
-              <i className="fa fa-linkedin" aria-hidden="true"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Contact Form */}
-      <div className="col-xl-7 col-lg-7 offset-lg-5 z-5">
-        <div className="mt-minus-xl md:mt-0">
-          <div className="sectionHeading -left-line bg-dark py-48 px-48 md:py-20 md:px-20">
-            <span className="sectionHeading__subtitle text-white">
-              CONTACT FORM
-            </span>
-            <h2 className="sectionHeading__title text-white">
-              Send a Message
-            </h2>
-
-            <form
-              className="-light row js-ajax-form"
-              method="POST"
-              action="https://creativelayers.net/themes/hellix-html/contact.php"
-              data-message-success="Your message has been sent! We will reply you as soon as possible."
-              data-message-error="Something went wrong. Please contact me directly at hellix@example.com."
-            >
-              <div className="col-12">
-                <div className="js-input-group">
-                  <textarea
-                    name="message"
-                    rows={5}
-                    placeholder="Your Comment"
-                  ></textarea>
-                  <span className="form__error"></span>
+  
+          <div className="row y-gap-32 mt-40 lg:mt-20">
+  
+            <div className="col-xl-3 col-lg-4 col-sm-6">
+              <div className="shopCard text-center">
+                <div className="shopCard__image ratio ratio-29:33">
+                  <img className="ratio-img" src="img/shop/products/1.jpg" alt="Product image" />
+                  <a data-barba href="#" className="shopCard__button">
+                    <i className="icon" data-feather="shopping-bag"></i>
+                    Add to cart
+                  </a>
+                </div>
+                <div className="shopCard__content mt-20">
+                  <div className="shopCard__category text-accent">
+                    <a data-barba href="#">House</a>, <a data-barba href="#">Interior</a>
+                  </div>
+                  <h4 className="shopCard__title text-base mt-8">Grey Velvet Chair</h4>
+                  <div className="shopCard__price text-sm text-dark mt-8">$350.00</div>
                 </div>
               </div>
-
-              <div className="col-12 mt-20">
-                <div className="js-input-group">
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    placeholder="Your Name"
-                  />
-                  <span className="form__error"></span>
+            </div>
+  
+            <div className="col-xl-3 col-lg-4 col-sm-6">
+              <div className="shopCard text-center">
+                <div className="shopCard__image ratio ratio-29:33">
+                  <img className="ratio-img" src="img/shop/products/2.jpg" alt="Product image" />
+                  <a data-barba href="#" className="shopCard__button">
+                    <i className="icon" data-feather="shopping-bag"></i>
+                    Add to cart
+                  </a>
+                </div>
+                <div className="shopCard__content mt-20">
+                  <div className="shopCard__category text-accent">
+                    <a data-barba href="#">House</a>, <a data-barba href="#">Interior</a>
+                  </div>
+                  <h4 className="shopCard__title text-base mt-8">Grey Velvet Chair</h4>
+                  <div className="shopCard__price text-sm text-dark mt-8">$350.00</div>
                 </div>
               </div>
-
-              <div className="col-12 mt-20">
-                <div className="js-input-group">
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    placeholder="Your Email"
-                  />
-                  <span className="form__error"></span>
+            </div>
+  
+            <div className="col-xl-3 col-lg-4 col-sm-6">
+              <div className="shopCard text-center">
+                <div className="shopCard__image ratio ratio-29:33">
+                  <img className="ratio-img" src="img/shop/products/3.jpg" alt="Product image" />
+                  <a data-barba href="#" className="shopCard__button">
+                    <i className="icon" data-feather="shopping-bag"></i>
+                    Add to cart
+                  </a>
+                </div>
+                <div className="shopCard__content mt-20">
+                  <div className="shopCard__category text-accent">
+                    <a data-barba href="#">House</a>, <a data-barba href="#">Interior</a>
+                  </div>
+                  <h4 className="shopCard__title text-base mt-8">Grey Velvet Chair</h4>
+                  <div className="shopCard__price text-sm text-dark mt-8">$350.00</div>
                 </div>
               </div>
-
-              <div className="col-12 mt-20">
-                <div className="js-input-group">
-                  <input
-                    type="text"
-                    name="website"
-                    placeholder="Website"
-                  />
+            </div>
+  
+            <div className="col-xl-3 col-lg-4 col-sm-6">
+              <div className="shopCard text-center">
+                <div className="shopCard__image ratio ratio-29:33">
+                  <img className="ratio-img" src="img/shop/products/4.jpg" alt="Product image" />
+                  <a data-barba href="#" className="shopCard__button">
+                    <i className="icon" data-feather="shopping-bag"></i>
+                    Add to cart
+                  </a>
+                </div>
+                <div className="shopCard__content mt-20">
+                  <div className="shopCard__category text-accent">
+                    <a data-barba href="#">House</a>, <a data-barba href="#">Interior</a>
+                  </div>
+                  <h4 className="shopCard__title text-base mt-8">Grey Velvet Chair</h4>
+                  <div className="shopCard__price text-sm text-dark mt-8">$350.00</div>
                 </div>
               </div>
-
-              <div className="col-12 ajax-form-alert js-ajax-form-alert">
-                <div className="ajax-form-alert__content"></div>
+            </div>
+  
+            <div className="col-xl-3 col-lg-4 col-sm-6">
+              <div className="shopCard text-center">
+                <div className="shopCard__image ratio ratio-29:33">
+                  <img className="ratio-img" src="img/shop/products/5.jpg" alt="Product image" />
+                  <a data-barba href="#" className="shopCard__button">
+                    <i className="icon" data-feather="shopping-bag"></i>
+                    Add to cart
+                  </a>
+                </div>
+                <div className="shopCard__content mt-20">
+                  <div className="shopCard__category text-accent">
+                    <a data-barba href="#">House</a>, <a data-barba href="#">Interior</a>
+                  </div>
+                  <h4 className="shopCard__title text-base mt-8">Grey Velvet Chair</h4>
+                  <div className="shopCard__price text-sm text-dark mt-8">$350.00</div>
+                </div>
               </div>
-
-              <div className="col-12 mt-32">
-                <button
-                  type="submit"
-                  name="submit"
-                  className="button -md -accent text-white"
-                >
-                  SEND MESSAGE
-                </button>
+            </div>
+  
+            <div className="col-xl-3 col-lg-4 col-sm-6">
+              <div className="shopCard text-center">
+                <div className="shopCard__image ratio ratio-29:33">
+                  <img className="ratio-img" src="img/shop/products/6.jpg" alt="Product image" />
+                  <a data-barba href="#" className="shopCard__button">
+                    <i className="icon" data-feather="shopping-bag"></i>
+                    Add to cart
+                  </a>
+                </div>
+                <div className="shopCard__content mt-20">
+                  <div className="shopCard__category text-accent">
+                    <a data-barba href="#">House</a>, <a data-barba href="#">Interior</a>
+                  </div>
+                  <h4 className="shopCard__title text-base mt-8">Grey Velvet Chair</h4>
+                  <div className="shopCard__price text-sm text-dark mt-8">$350.00</div>
+                </div>
               </div>
-            </form>
-
+            </div>
+  
+            <div className="col-xl-3 col-lg-4 col-sm-6">
+              <div className="shopCard text-center">
+                <div className="shopCard__image ratio ratio-29:33">
+                  <img className="ratio-img" src="img/shop/products/7.jpg" alt="Product image" />
+                  <a data-barba href="#" className="shopCard__button">
+                    <i className="icon" data-feather="shopping-bag"></i>
+                    Add to cart
+                  </a>
+                </div>
+                <div className="shopCard__content mt-20">
+                  <div className="shopCard__category text-accent">
+                    <a data-barba href="#">House</a>, <a data-barba href="#">Interior</a>
+                  </div>
+                  <h4 className="shopCard__title text-base mt-8">Grey Velvet Chair</h4>
+                  <div className="shopCard__price text-sm text-dark mt-8">$350.00</div>
+                </div>
+              </div>
+            </div>
+  
+            <div className="col-xl-3 col-lg-4 col-sm-6">
+              <div className="shopCard text-center">
+                <div className="shopCard__image ratio ratio-29:33">
+                  <img className="ratio-img" src="img/shop/products/8.jpg" alt="Product image" />
+                  <a data-barba href="#" className="shopCard__button">
+                    <i className="icon" data-feather="shopping-bag"></i>
+                    Add to cart
+                  </a>
+                </div>
+                <div className="shopCard__content mt-20">
+                  <div className="shopCard__category text-accent">
+                    <a data-barba href="#">House</a>, <a data-barba href="#">Interior</a>
+                  </div>
+                  <h4 className="shopCard__title text-base mt-8">Grey Velvet Chair</h4>
+                  <div className="shopCard__price text-sm text-dark mt-8">$350.00</div>
+                </div>
+              </div>
+            </div>
+  
+            <div className="col-xl-3 col-lg-4 col-sm-6">
+              <div className="shopCard text-center">
+                <div className="shopCard__image ratio ratio-29:33">
+                  <img className="ratio-img" src="img/shop/products/9.jpg" alt="Product image" />
+                  <a data-barba href="#" className="shopCard__button">
+                    <i className="icon" data-feather="shopping-bag"></i>
+                    Add to cart
+                  </a>
+                </div>
+                <div className="shopCard__content mt-20">
+                  <div className="shopCard__category text-accent">
+                    <a data-barba href="#">House</a>, <a data-barba href="#">Interior</a>
+                  </div>
+                  <h4 className="shopCard__title text-base mt-8">Grey Velvet Chair</h4>
+                  <div className="shopCard__price text-sm text-dark mt-8">$350.00</div>
+                </div>
+              </div>
+            </div>
+  
+            <div className="col-xl-3 col-lg-4 col-sm-6">
+              <div className="shopCard text-center">
+                <div className="shopCard__image ratio ratio-29:33">
+                  <img className="ratio-img" src="img/shop/products/10.jpg" alt="Product image" />
+                  <a data-barba href="#" className="shopCard__button">
+                    <i className="icon" data-feather="shopping-bag"></i>
+                    Add to cart
+                  </a>
+                </div>
+                <div className="shopCard__content mt-20">
+                  <div className="shopCard__category text-accent">
+                    <a data-barba href="#">House</a>, <a data-barba href="#">Interior</a>
+                  </div>
+                  <h4 className="shopCard__title text-base mt-8">Grey Velvet Chair</h4>
+                  <div className="shopCard__price text-sm text-dark mt-8">$350.00</div>
+                </div>
+              </div>
+            </div>
+  
+            <div className="col-xl-3 col-lg-4 col-sm-6">
+              <div className="shopCard text-center">
+                <div className="shopCard__image ratio ratio-29:33">
+                  <img className="ratio-img" src="img/shop/products/11.jpg" alt="Product image" />
+                  <a data-barba href="#" className="shopCard__button">
+                    <i className="icon" data-feather="shopping-bag"></i>
+                    Add to cart
+                  </a>
+                </div>
+                <div className="shopCard__content mt-20">
+                  <div className="shopCard__category text-accent">
+                    <a data-barba href="#">House</a>, <a data-barba href="#">Interior</a>
+                  </div>
+                  <h4 className="shopCard__title text-base mt-8">Grey Velvet Chair</h4>
+                  <div className="shopCard__price text-sm text-dark mt-8">$350.00</div>
+                </div>
+              </div>
+            </div>
+  
+            <div className="col-xl-3 col-lg-4 col-sm-6">
+              <div className="shopCard text-center">
+                <div className="shopCard__image ratio ratio-29:33">
+                  <img className="ratio-img" src="img/shop/products/12.jpg" alt="Product image" />
+                  <a data-barba href="#" className="shopCard__button">
+                    <i className="icon" data-feather="shopping-bag"></i>
+                    Add to cart
+                  </a>
+                </div>
+                <div className="shopCard__content mt-20">
+                  <div className="shopCard__category text-accent">
+                    <a data-barba href="#">House</a>, <a data-barba href="#">Interior</a>
+                  </div>
+                  <h4 className="shopCard__title text-base mt-8">Grey Velvet Chair</h4>
+                  <div className="shopCard__price text-sm text-dark mt-8">$350.00</div>
+                </div>
+              </div>
+            </div>
+  
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+  
+
     
 <footer className="footer -type-1">
 

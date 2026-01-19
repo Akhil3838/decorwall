@@ -67,6 +67,9 @@ function page() {
             <li className="text-white">
               <a href="/services">Services</a>
             </li>
+            <li className="text-white">
+              <a href="/catalogue">Catalogue</a>
+            </li>
              <li className="text-white">
               <a  href="/shop">Shop</a>
             </li>
@@ -94,7 +97,7 @@ function page() {
               alt="logo"
               className="icon"
             />
-            <p>© 2021 Hellix. All rights reserved.</p>
+            <p>© 2026 Decorwall. All rights reserved.</p>
           </div>
         </div>
       </div>
