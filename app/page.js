@@ -100,7 +100,7 @@ export default function Home() {
               alt="logo"
               className="icon"
             />
-            <p>© 2021 Hellix. All rights reserved.</p>
+            <p>© 2026 DecoWlls. All rights reserved.</p>
           </div>
         </div>
       </div>
@@ -174,15 +174,16 @@ export default function Home() {
   
     <div className="sidebar__header">
       <div className="sidebar__logo">
-        <img src="img/general/logo-light.svg" alt="helix logo" />
+        <img src="img/logo1.png" alt="helix logo" style={{ height: "50px", width: "auto" }}
+ />
       </div>
   
-      <h4 className="title">HELLIX</h4>
-      <p className="subtitle">AN-AWARD WINNING ARCHITECTURE COMPANY</p>
+      <h4 className="title">Decowalls</h4>
+      <p className="subtitle">ARCHITECTURAL DECORATIVE PANELS</p>
     </div>
   
     <div className="sidebar__instagram">
-      <h5 className="title">#hellix</h5>
+      <h5 className="title">#Decowalls</h5>
   
       <div className="instagram">
         <a data-barba href="#" className="instagram__item">
@@ -259,21 +260,24 @@ export default function Home() {
       </div>
     </div>
   
-    <div className="sidebar__info">
-      <h5 className="title">Let's Start a Project</h5>
-      <p className="text">
-        T: +1 333 436 1747
-        <br />
-        M: hi@hellix.com
-      </p>
-      <p className="text">
-        A: PO Box 16122 Collins Street West
-        <br />
-        Victoria 8007 Australia
-      </p>
-  
-      <button className="button -simple">GET DIRECTIONS</button>
-    </div>
+   <div className="sidebar__info">
+  <h5 className="title">Let's Start a Project</h5>
+
+  <p className="text">
+    T: +91 96388 12342
+    <br />
+    M: mydecowall14@gmail.com
+  </p>
+
+  <p className="text">
+    A: 8, Navnidhi Avenue, Gurukul
+    <br />
+    Ahmedabad
+  </p>
+
+  <button className="button -simple">GET DIRECTIONS</button>
+</div>
+
   
     <div className="sidebar__socials">
       <div className="item">
@@ -1490,7 +1494,12 @@ export default function Home() {
 
         <div className="col-auto sm:order-1">
           <div className="footer__logo">
-            <img src="img/general/logo.svg" alt="Decowalls logo" />
+            <img
+      src="/img/logo1.png"
+      alt="Logo"
+      className="header__logo-img"
+      style={{ height: "50px", width: "auto" }}
+    />
           </div>
         </div>
 

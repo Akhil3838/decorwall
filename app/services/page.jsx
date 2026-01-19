@@ -2,16 +2,17 @@ import React from 'react'
 
 function page() {
   return (
-    <>
+    <div className="preloader-visible" data-barba="wrapper">
     {/* preloader start */}
 <div className="preloader js-preloader">
   <div className="preloader__bg"></div>
 
   <div className="preloader__progress">
     <div className="preloader__progress__inner"></div>
-    <img
-      src="img/general/loader.svg"
-      alt="preloader image"
+     <img
+       src="/img/logo1.png"
+      alt="Logo"
+      style={{ height: "4rem", width: "8rem" }}
       className="preloader__img"
     />
   </div>
@@ -169,139 +170,143 @@ function page() {
   
     <div className="content-wrapper  js-content-wrapper">
       
-      <aside className="sidebar js-sidebar">
-      <div className="sidebar__cross">
-        <button className="button js-sidebar-close">
-          <i className="icon icon-cross"></i>
-        </button>
+  <aside className="sidebar js-sidebar">
+    <div className="sidebar__cross">
+      <button className="button js-sidebar-close">
+        <i className="icon icon-cross"></i>
+      </button>
+    </div>
+  
+    <div className="sidebar__header">
+      <div className="sidebar__logo">
+        <img src="img/logo1.png" alt="helix logo" style={{ height: "50px", width: "auto" }}
+ />
       </div>
-    
-      <div className="sidebar__header">
-        <div className="sidebar__logo">
-          <img src="img/general/logo-light.svg" alt="helix logo" />
-        </div>
-    
-        <h4 className="title">HELLIX</h4>
-        <p className="subtitle">AN-AWARD WINNING ARCHITECTURE COMPANY</p>
+  
+      <h4 className="title">Decowalls</h4>
+      <p className="subtitle">ARCHITECTURAL DECORATIVE PANELS</p>
+    </div>
+  
+    <div className="sidebar__instagram">
+      <h5 className="title">#Decowalls</h5>
+  
+      <div className="instagram">
+        <a data-barba href="#" className="instagram__item">
+          <div className="instagram__image">
+            <div
+              className="ratio ratio-1:1 bg-image js-lazy"
+              data-bg="img/main-sidebar/instagram/1.jpg"
+            ></div>
+          </div>
+          <div className="instagram__content">
+            <i className="icon fa fa-instagram" aria-hidden="true"></i>
+          </div>
+        </a>
+  
+        <a data-barba href="#" className="instagram__item">
+          <div className="instagram__image">
+            <div
+              className="ratio ratio-1:1 bg-image js-lazy"
+              data-bg="img/main-sidebar/instagram/2.jpg"
+            ></div>
+          </div>
+          <div className="instagram__content">
+            <i className="icon fa fa-instagram" aria-hidden="true"></i>
+          </div>
+        </a>
+  
+        <a data-barba href="#" className="instagram__item">
+          <div className="instagram__image">
+            <div
+              className="ratio ratio-1:1 bg-image js-lazy"
+              data-bg="img/main-sidebar/instagram/3.jpg"
+            ></div>
+          </div>
+          <div className="instagram__content">
+            <i className="icon fa fa-instagram" aria-hidden="true"></i>
+          </div>
+        </a>
+  
+        <a data-barba href="#" className="instagram__item">
+          <div className="instagram__image">
+            <div
+              className="ratio ratio-1:1 bg-image js-lazy"
+              data-bg="img/main-sidebar/instagram/4.jpg"
+            ></div>
+          </div>
+          <div className="instagram__content">
+            <i className="icon fa fa-instagram" aria-hidden="true"></i>
+          </div>
+        </a>
+  
+        <a data-barba href="#" className="instagram__item">
+          <div className="instagram__image">
+            <div
+              className="ratio ratio-1:1 bg-image js-lazy"
+              data-bg="img/main-sidebar/instagram/5.jpg"
+            ></div>
+          </div>
+          <div className="instagram__content">
+            <i className="icon fa fa-instagram" aria-hidden="true"></i>
+          </div>
+        </a>
+  
+        <a data-barba href="#" className="instagram__item">
+          <div className="instagram__image">
+            <div
+              className="ratio ratio-1:1 bg-image js-lazy"
+              data-bg="img/main-sidebar/instagram/6.jpg"
+            ></div>
+          </div>
+          <div className="instagram__content">
+            <i className="icon fa fa-instagram" aria-hidden="true"></i>
+          </div>
+        </a>
       </div>
-    
-      <div className="sidebar__instagram">
-        <h5 className="title">#hellix</h5>
-    
-        <div className="instagram">
-    
-          <a data-barba href="#" className="instagram__item">
-            <div className="instagram__image">
-              <div
-                className="ratio ratio-1:1 bg-image js-lazy"
-                data-bg="img/main-sidebar/instagram/1.jpg"
-              ></div>
-            </div>
-            <div className="instagram__content">
-              <i className="icon fa fa-instagram" aria-hidden="true"></i>
-            </div>
-          </a>
-    
-          <a data-barba href="#" className="instagram__item">
-            <div className="instagram__image">
-              <div
-                className="ratio ratio-1:1 bg-image js-lazy"
-                data-bg="img/main-sidebar/instagram/2.jpg"
-              ></div>
-            </div>
-            <div className="instagram__content">
-              <i className="icon fa fa-instagram" aria-hidden="true"></i>
-            </div>
-          </a>
-    
-          <a data-barba href="#" className="instagram__item">
-            <div className="instagram__image">
-              <div
-                className="ratio ratio-1:1 bg-image js-lazy"
-                data-bg="img/main-sidebar/instagram/3.jpg"
-              ></div>
-            </div>
-            <div className="instagram__content">
-              <i className="icon fa fa-instagram" aria-hidden="true"></i>
-            </div>
-          </a>
-    
-          <a data-barba href="#" className="instagram__item">
-            <div className="instagram__image">
-              <div
-                className="ratio ratio-1:1 bg-image js-lazy"
-                data-bg="img/main-sidebar/instagram/4.jpg"
-              ></div>
-            </div>
-            <div className="instagram__content">
-              <i className="icon fa fa-instagram" aria-hidden="true"></i>
-            </div>
-          </a>
-    
-          <a data-barba href="#" className="instagram__item">
-            <div className="instagram__image">
-              <div
-                className="ratio ratio-1:1 bg-image js-lazy"
-                data-bg="img/main-sidebar/instagram/5.jpg"
-              ></div>
-            </div>
-            <div className="instagram__content">
-              <i className="icon fa fa-instagram" aria-hidden="true"></i>
-            </div>
-          </a>
-    
-          <a data-barba href="#" className="instagram__item">
-            <div className="instagram__image">
-              <div
-                className="ratio ratio-1:1 bg-image js-lazy"
-                data-bg="img/main-sidebar/instagram/6.jpg"
-              ></div>
-            </div>
-            <div className="instagram__content">
-              <i className="icon fa fa-instagram" aria-hidden="true"></i>
-            </div>
-          </a>
-    
-        </div>
+    </div>
+  
+   <div className="sidebar__info">
+  <h5 className="title">Let's Start a Project</h5>
+
+  <p className="text">
+    T: +91 96388 12342
+    <br />
+    M: mydecowall14@gmail.com
+  </p>
+
+  <p className="text">
+    A: 8, Navnidhi Avenue, Gurukul
+    <br />
+    Ahmedabad
+  </p>
+
+  <button className="button -simple">GET DIRECTIONS</button>
+</div>
+
+  
+    <div className="sidebar__socials">
+      <div className="item">
+        <a data-barba href="#">
+          <i className="fa fa-facebook" aria-hidden="true"></i>
+        </a>
       </div>
-    
-      <div className="sidebar__info">
-        <h5 className="title">Let's Start a Project</h5>
-        <p className="text">
-          T: +1 333 436 1747<br />
-          M: hi@hellix.com
-        </p>
-        <p className="text">
-          A: PO Box 16122 Collins Street West<br />
-          Victoria 8007 Australia
-        </p>
-    
-        <button className="button -simple">GET DIRECTIONS</button>
+      <div className="item">
+        <a data-barba href="#">
+          <i className="fa fa-twitter" aria-hidden="true"></i>
+        </a>
       </div>
-    
-      <div className="sidebar__socials">
-        <div className="item">
-          <a data-barba href="#">
-            <i className="fa fa-facebook" aria-hidden="true"></i>
-          </a>
-        </div>
-        <div className="item">
-          <a data-barba href="#">
-            <i className="fa fa-twitter" aria-hidden="true"></i>
-          </a>
-        </div>
-        <div className="item">
-          <a data-barba href="#">
-            <i className="fa fa-instagram" aria-hidden="true"></i>
-          </a>
-        </div>
-        <div className="item">
-          <a data-barba href="#">
-            <i className="fa fa-linkedin" aria-hidden="true"></i>
-          </a>
-        </div>
+      <div className="item">
+        <a data-barba href="#">
+          <i className="fa fa-instagram" aria-hidden="true"></i>
+        </a>
       </div>
-    </aside>
+      <div className="item">
+        <a data-barba href="#">
+          <i className="fa fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </aside>
     
     <section className="page-masthead">
       <div data-parallax="0.6" className="page-masthead__bg">
@@ -780,7 +785,12 @@ function page() {
 
         <div className="col-auto sm:order-1">
           <div className="footer__logo">
-            <img src="img/general/logo.svg" alt="Decowalls logo" />
+            <img
+      src="/img/logo1.png"
+      alt="Logo"
+      className="header__logo-img"
+      style={{ height: "50px", width: "auto" }}
+    />
           </div>
         </div>
 
@@ -809,7 +819,7 @@ function page() {
     
   </main>
   
-</div>    </>
+</div>    </div>
   )
 }
 

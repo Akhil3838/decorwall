@@ -105,7 +105,7 @@
 }
 
 :root {
-  --preloader-image: url('../img/general/logo-light.svg');
+  --preloader-image: url('/img/logo1.png');
 }
 
 :root {
@@ -5238,8 +5238,8 @@ body.preloader-visible .preloader__progress {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 8rem;
+  height: 4rem;
   background-color: #FFFFFF;
   opacity: 0;
   -webkit-mask-image: var(--preloader-image);
