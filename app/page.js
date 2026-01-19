@@ -65,6 +65,9 @@ export default function Home() {
             <li className="text-white">
               <a href="/services">Services</a>
             </li>
+            <li className="text-white">
+              <a href="/catalogue">Catalogue</a>
+            </li>
              <li className="text-white">
               <a  href="/shop">Shop</a>
             </li>
