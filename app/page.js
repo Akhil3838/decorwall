@@ -39,11 +39,16 @@ export default function Home() {
       {/* Logo */}
       <div className="col-auto z-5 js-header-item">
         <div className="header__item -margin-sm">
-          <div className="header__logo text-white js-header-logo">
-            <a data-barba href="/">
-              <i className="icon icon-logo"></i>
-            </a>
-          </div>
+<div className="header__logo text-white js-header-logo">
+  <a data-barba href="/">
+    <img
+      src="/img/logo1.png"
+      alt="Logo"
+      className="header__logo-img"
+      style={{ height: "50px", width: "auto" }}
+    />
+  </a>
+</div>
         </div>
       </div>
 

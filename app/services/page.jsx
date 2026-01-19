@@ -43,7 +43,12 @@ function page() {
         <div className="header__item -margin-sm">
           <div className="header__logo text-white js-header-logo">
             <a data-barba href="/">
-              <i className="icon icon-logo"></i>
+              <img
+      src="/img/logo1.png"
+      alt="Logo"
+      className="header__logo-img"
+      style={{ height: "50px", width: "auto" }}
+    />
             </a>
           </div>
         </div>
