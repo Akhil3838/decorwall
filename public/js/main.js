@@ -1940,70 +1940,89 @@ function customEasingsInit() {
 
 const Preloader = (function () {
 
-  function getEls() {
-    const preloader = document.querySelector(".js-preloader");
-    if (!preloader) return null;
+  let preloader, bg, progress, progressInner;
+  let effectsRegistered = false;
 
-    return {
-      preloader,
-      bg: preloader.querySelector(".preloader__bg"),
-      progress: preloader.querySelector(".preloader__progress"),
-      progressInner: preloader.querySelector(".preloader__progress__inner"),
-    };
+  function cacheDom() {
+    preloader = document.querySelector('.js-preloader');
+    if (!preloader) return;
+
+    bg = preloader.querySelector('.preloader__bg');
+    progress = preloader.querySelector('.preloader__progress');
+    progressInner = preloader.querySelector('.preloader__progress__inner');
+  }
+
+  // 🔐 Always register stub effects FIRST (prevents GSAP crash)
+  function registerEffects() {
+    if (effectsRegistered) return;
+    effectsRegistered = true;
+
+    gsap.registerEffect({
+      name: 'preloaderInitial',
+      effect: () => gsap.timeline(),
+      extendTimeline: true,
+    });
+
+    gsap.registerEffect({
+      name: 'preloaderShow',
+      effect: () => gsap.timeline(),
+      extendTimeline: true,
+    });
+
+    gsap.registerEffect({
+      name: 'preloaderHide',
+      effect: () => gsap.timeline(),
+      extendTimeline: true,
+    });
   }
 
   function initial() {
-    const els = getEls();
-    if (!els) return;
-
-    const { bg, progress, progressInner } = els;
+    if (!preloader) return;
 
     gsap.registerEffect({
-      name: "preloaderInitial",
+      name: 'preloaderInitial',
       effect: () => {
-        document.documentElement.classList.add("html-overflow-hidden");
+        document.documentElement.classList.add('html-overflow-hidden');
         const tl = gsap.timeline();
 
-        if (!document.body.classList.contains("preloader-visible")) {
-          document.documentElement.classList.remove("html-overflow-hidden");
+        if (!document.body.classList.contains('preloader-visible')) {
+          document.documentElement.classList.remove('html-overflow-hidden');
           return tl;
         }
 
         return tl
           .fromTo(progressInner, { scaleY: 0 }, {
             scaleY: 1,
-            ease: "none",
+            ease: 'none',
             duration: 1,
             delay: 0.3,
-            onStart: () => bg.classList.add("origin-top"),
+            onStart: () => bg.classList.add('origin-top'),
           })
           .to(progress, {
             duration: 0.5,
-            ease: "quart.inOut",
+            ease: 'quart.inOut',
             opacity: 0,
             scale: 0.75,
-          }, ">-0.1")
+          }, '>-0.1')
           .to(bg, {
-            ease: "quart.inOut",
+            ease: 'quart.inOut',
             duration: 0.6,
             scaleY: 0,
             onComplete: () => {
-              document.documentElement.classList.remove("html-overflow-hidden");
+              document.documentElement.classList.remove('html-overflow-hidden');
+              document.body.classList.remove('preloader-visible');
             },
-          }, ">-0.5");
+          }, '>-0.5');
       },
       extendTimeline: true,
     });
   }
 
   function show() {
-    const els = getEls();
-    if (!els) return;
-
-    const { bg, progress, progressInner } = els;
+    if (!preloader) return;
 
     gsap.registerEffect({
-      name: "preloaderShow",
+      name: 'preloaderShow',
       effect: () => {
         const tl = gsap.timeline();
 
@@ -2011,26 +2030,26 @@ const Preloader = (function () {
           .set(progress, { opacity: 0, scale: 0.75 })
           .set(progressInner, { scaleY: 0 })
           .to(bg, {
-            ease: "quart.inOut",
+            ease: 'quart.inOut',
             duration: 0.6,
             scaleY: 1,
             onStart: () => {
-              bg.classList.remove("origin-top");
-              document.documentElement.classList.add("html-overflow-hidden");
+              bg.classList.remove('origin-top');
+              document.documentElement.classList.add('html-overflow-hidden');
             },
           })
           .to(progress, {
             delay: 0.1,
             duration: 0.6,
-            ease: "quart.out",
+            ease: 'quart.out',
             opacity: 1,
             scale: 1,
           })
           .to(progressInner, {
             scaleY: 1,
             duration: 1,
-            ease: "none",
-          }, ">-0.3");
+            ease: 'none',
+          }, '>-0.3');
 
         return tl;
       },
@@ -2039,13 +2058,10 @@ const Preloader = (function () {
   }
 
   function hide() {
-    const els = getEls();
-    if (!els) return;
-
-    const { bg, progress } = els;
+    if (!preloader) return;
 
     gsap.registerEffect({
-      name: "preloaderHide",
+      name: 'preloaderHide',
       effect: () => {
         const tl = gsap.timeline();
 
@@ -2053,48 +2069,46 @@ const Preloader = (function () {
           .to(progress, {
             delay: 0.15,
             duration: 0.5,
-            ease: "quart.inOut",
+            ease: 'quart.inOut',
             opacity: 0,
             scale: 0.75,
-            onStart: () => bg.classList.add("origin-top"),
+            onStart: () => bg.classList.add('origin-top'),
           })
           .to(bg, {
-            ease: "quart.inOut",
+            ease: 'quart.inOut',
             duration: 0.6,
             scaleY: 0,
             onComplete: () => {
-              document.documentElement.classList.remove("html-overflow-hidden");
-              document.documentElement.classList.remove("overflow-hidden");
-              document.body.classList.remove("overflow-hidden");
-              document.body.classList.remove("preloader-visible");
+              document.documentElement.classList.remove('html-overflow-hidden');
+              document.documentElement.classList.remove('overflow-hidden');
+              document.body.classList.remove('overflow-hidden');
+              document.body.classList.remove('preloader-visible');
             },
-          }, ">-0.5");
+          }, '>-0.5');
       },
       extendTimeline: true,
     });
   }
 
   function init() {
-    if (typeof window === "undefined") return;
+    registerEffects();   // ✅ always first
+    cacheDom();
+
+    if (!preloader) {
+      // safety: never leave body locked
+      document.body.classList.remove('preloader-visible');
+      document.documentElement.classList.remove('html-overflow-hidden');
+      return;
+    }
 
     initial();
     show();
     hide();
-
-    // 🧯 FAILSAFE: never let loader stick forever
-    setTimeout(() => {
-      const preloader = document.querySelector(".js-preloader");
-      if (preloader) {
-        preloader.classList.add("is-hidden");
-        document.documentElement.classList.remove("html-overflow-hidden");
-        document.documentElement.classList.remove("overflow-hidden");
-        document.body.classList.remove("overflow-hidden");
-        document.body.classList.remove("preloader-visible");
-      }
-    }, 1800);
   }
 
-  return { init };
+  return {
+    init,
+  };
 
 })();
 
@@ -2664,9 +2678,17 @@ const PageReveal = (function() {
 
 function initialReveal(callback) {
   let tl = gsap.timeline();
-  tl.preloaderInitial();
+
+  // ✅ Guard against missing effect (Next.js hydration timing)
+  if (gsap.effects && gsap.effects.preloaderInitial) {
+    tl.preloaderInitial();
+  }
+
   tl = PageReveal.init(tl);
-  tl.add(function () { callback(); })
+
+  tl.add(function () {
+    callback();
+  });
 }
 
 /*--------------------------------------------------
@@ -3256,12 +3278,12 @@ function contactForm() {
 ---------------------------------------------------*/
 
 function lazyLoading() {
-  if (typeof window === "undefined") return;
+  if (!document.querySelector('.js-lazy')) {
+    return;
+  }
 
-  document.querySelectorAll(".js-lazy[data-bg]").forEach((el) => {
-    const bg = el.getAttribute("data-bg");
-    if (bg) el.style.backgroundImage = `url(${bg})`;
-    el.classList.remove("js-lazy");
+  new LazyLoad({
+    elements_selector: ".js-lazy",
   });
 }
 
@@ -3541,21 +3563,3 @@ function masonryGridInit() {
 }
 
 })();
-
-function initTheme() {
-  if (window.Preloader?.init) {
-    window.Preloader.init();
-  }
-
-  if (window.lazyLoading) {
-    window.lazyLoading();
-  }
-}
-
-// 🔥 This fixes Next.js first-load timing
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initTheme);
-} else {
-  initTheme();
-}
-
