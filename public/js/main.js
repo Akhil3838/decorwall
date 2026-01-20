@@ -46,12 +46,13 @@ App.SMcontroller = new ScrollMagic.Controller();
 window.onload = function () {
   customEasingsInit();
   pageRevealEffects();
-  Preloader.init();
-  
+
+  if (window.Preloader && typeof window.Preloader.init === 'function') {
+    window.Preloader.init(); // ✅ run once, safely
+  }
 
   document.fonts.ready.then(function () {
     initComponents();
-
     initialReveal(() => {
       MainSliderReveal.animate();
       MainSliderReveal2.animate();
@@ -1955,7 +1956,6 @@ const Preloader = (function () {
   }
 
   function registerEffects() {
-
     if (gsap.effects && gsap.effects.preloaderInitial) return;
 
     gsap.registerEffect({
@@ -2019,7 +2019,6 @@ const Preloader = (function () {
 
     registerEffects();
 
-    // 🔥 ALWAYS force animation on next frame
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         const tl = gsap.timeline();
@@ -2035,11 +2034,17 @@ const Preloader = (function () {
     hardFailSafe();
   }
 
+  // ✅ expose safely to window (INSIDE scope)
+  window.Preloader = {
+    init: init,
+  };
+
   return {
     init,
   };
 
 })();
+
 /*--------------------------------------------------
   03. Header
 ---------------------------------------------------*/

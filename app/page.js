@@ -1,9 +1,37 @@
+'use client'
+
 import Image from "next/image";
 import styles from "./page.module.css";
 import Header from "./components/home/Header";
 import Footer from "./components/home/Footer";
+import { useEffect } from "react";
 
 export default function Home() {
+
+   useEffect(() => {
+    // 🔥 wait until React has mounted DOM
+    const t1 = setTimeout(() => {
+      // run your GSAP preloader if it exists
+      if (window.Preloader && typeof window.Preloader.init === "function") {
+        window.Preloader.init();
+      }
+    }, 150);
+
+    // 🛟 hard fail-safe: NEVER allow stuck loader
+    const t2 = setTimeout(() => {
+      document.body.classList.remove("preloader-visible");
+      document.documentElement.classList.remove("html-overflow-hidden");
+
+      const p = document.querySelector(".js-preloader");
+      if (p) p.style.display = "none";
+    }, 3500);
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+    };
+  }, []);
+
   return (
     <>
     {/* preloader start */}
