@@ -1,4 +1,6 @@
 import React from 'react'
+import Header from '../components/home/Header'
+import Footer from '../components/home/Footer'
 
 function page() {
   return (
@@ -35,135 +37,7 @@ function page() {
   <main className="main-content ">
   
 {/* header start */}
-<header className="header js-header">
-  <div className="header__bar js-header-bar">
-    <div className="row justify-content-between align-items-center">
-
-      {/* Logo */}
-      <div className="col-auto z-5 js-header-item">
-        <div className="header__item -margin-sm">
-          <div className="header__logo text-white js-header-logo">
-            <a data-barba href="/">
-              <img
-      src="/img/logo1.png"
-      alt="Logo"
-      className="header__logo-img"
-      style={{ height: "50px", width: "auto" }}
-    />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Menu */}
-      <div className="menu js-menu">
-        <div className="mobile__background js-mobile-bg"></div>
-
-        <div className="menu__container">
-          <ul className="nav js-navList">
-
-            <li className="text-white">
-              <a data-barba href="/">Home</a>
-            </li>
-
-            <li className="text-white">
-              <a  href="/about-us">About Us</a>
-            </li>
-
-            <li className="text-white">
-              <a href="/services">Services</a>
-            </li>
-            <li className="text-white">
-              <a href="/catalogue">Catalogue</a>
-            </li>
-             <li className="text-white">
-              <a  href="/shop">Shop</a>
-            </li>
-
-            <li className="text-white">
-              <a  href="/contact-us">Contact Us</a>
-            </li>
-
-          </ul>
-        </div>
-
-        {/* Mobile Footer */}
-        <div className="mobile__footer js-mobile-footer">
-          <div className="mobile__socials">
-            {["facebook", "twitter", "instagram", "linkedin"].map((icon) => (
-              <a data-barba href="#" key={icon}>
-                <i className={`fa fa-${icon}`} aria-hidden="true"></i>
-              </a>
-            ))}
-          </div>
-
-          <div className="mobile__copyright">
-            <img
-              src="img/general/logo-light.svg"
-              alt="logo"
-              className="icon"
-            />
-            <p>© 2026 Decorwall. All rights reserved.</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Header Icons */}
-      <div className="col-auto z-5 sm:pos-unset js-header-item">
-        <div className="header__icons">
-
-          <div className="header__cart">
-            <a data-barba href="#">
-              <i className="icon text-white icon-cart"></i>
-            </a>
-          </div>
-
-          <div className="header__search">
-            <button className="js-headerSearch-open">
-              <i className="icon text-white icon-search"></i>
-            </button>
-          </div>
-
-          <div className="header__menu">
-            <button
-              type="button"
-              className="nav-button-open md:d-none js-sidebar-open"
-            >
-              <i className="icon text-white icon-menu"></i>
-            </button>
-
-            <button
-              type="button"
-              className="nav-button-open d-none md:d-block js-nav-open"
-            >
-              <i className="icon text-white icon-menu"></i>
-            </button>
-
-            <button
-              type="button"
-              className="nav-button-close d-none md:d-block pointer-events-none js-nav-close"
-            >
-              <i className="icon text-white icon-cross"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    {/* Search */}
-    <div className="headerSearch js-headerSearch">
-      <div className="headerSearch__line"></div>
-      <form action="#">
-        <i className="headerSearch__icon icon-search"></i>
-        <input type="search" placeholder="Type Your Search" />
-      </form>
-      <button className="headerSearch__close js-headerSearch-close">
-        <i className="icon icon-cross text-white"></i>
-      </button>
-    </div>
-  </div>
-</header>
+<Header/>
 {/* header end */}
   
   
@@ -187,7 +61,7 @@ function page() {
     </div>
   
     <div className="sidebar__instagram">
-      <h5 className="title">#Decowalls</h5>
+      {/* <h5 className="title">#Decowalls</h5> */}
   
       <div className="instagram">
         <a data-barba href="#" className="instagram__item">
@@ -285,35 +159,36 @@ function page() {
   
     <div className="sidebar__socials">
       <div className="item">
-        <a data-barba href="#">
+        <a data-barba href="https://www.facebook.com/mydecowalls?mibextid=ZbWKwL">
           <i className="fa fa-facebook" aria-hidden="true"></i>
         </a>
       </div>
-      <div className="item">
+      {/* <div className="item">
         <a data-barba href="#">
           <i className="fa fa-twitter" aria-hidden="true"></i>
         </a>
-      </div>
+      </div> */}
       <div className="item">
-        <a data-barba href="#">
+        <a data-barba href="https://www.instagram.com/mydecowall?igsh=MTdveXBpajV0OHlnbQ%3D%3D">
           <i className="fa fa-instagram" aria-hidden="true"></i>
         </a>
       </div>
-      <div className="item">
+      {/* <div className="item">
         <a data-barba href="#">
           <i className="fa fa-linkedin" aria-hidden="true"></i>
         </a>
-      </div>
+      </div> */}
     </div>
   </aside>
     
     <section className="page-masthead">
       <div data-parallax="0.6" className="page-masthead__bg">
         <div
-          data-parallax-target
-          className="bg-image js-lazy"
-          data-bg="img/backgrounds/6.jpg"
-        ></div>
+  data-parallax-target
+  className="bg-image"
+  style={{ backgroundImage: "url('img/backgrounds/6.jpg')" }}
+></div>
+
       </div>
     
       <div className="container">
@@ -363,7 +238,7 @@ function page() {
     </section>
     
     
-    <section className="layout-pt-md layout-pb-md bg-dark">
+    {/* <section className="layout-pt-md layout-pb-md bg-dark">
       <div className="container">
     
         <div className="row justify-content-between">
@@ -571,7 +446,7 @@ function page() {
         </div>
     
       </div>
-    </section>
+    </section> */}
     
 
 
@@ -589,18 +464,18 @@ function page() {
             <div className="col-xl-3 col-lg-4 col-sm-6">
               <div className="shopCard text-center">
                 <div className="shopCard__image ratio ratio-29:33">
-                  <img className="ratio-img" src="img/shop/products/1.jpg" alt="Product image" />
-                  <a data-barba href="#" className="shopCard__button">
+                  <img className="ratio-img " src="https://decowalls.in/public/productImage/image6.jpg" alt="Product image" />
+                  {/* <a data-barba href="#" className="shopCard__button">
                     <i className="icon" data-feather="shopping-bag"></i>
                     Add to cart
-                  </a>
+                  </a> */}
                 </div>
                 <div className="shopCard__content mt-20">
                   <div className="shopCard__category text-accent">
                     <a data-barba href="#">House</a>, <a data-barba href="#">Interior</a>
                   </div>
                   <h4 className="shopCard__title text-base mt-8">Grey Velvet Chair</h4>
-                  <div className="shopCard__price text-sm text-dark mt-8">$350.00</div>
+                  <div className="shopCard__price text-sm text-dark mt-8">₹350.00</div>
                 </div>
               </div>
             </div>
@@ -608,18 +483,18 @@ function page() {
             <div className="col-xl-3 col-lg-4 col-sm-6">
               <div className="shopCard text-center">
                 <div className="shopCard__image ratio ratio-29:33">
-                  <img className="ratio-img" src="img/shop/products/2.jpg" alt="Product image" />
-                  <a data-barba href="#" className="shopCard__button">
+                  <img className="ratio-img " src="https://decowalls.in/public/productImage/image5.jpg" alt="Product image" />
+                  {/* <a data-barba href="#" className="shopCard__button">
                     <i className="icon" data-feather="shopping-bag"></i>
                     Add to cart
-                  </a>
+                  </a> */}
                 </div>
                 <div className="shopCard__content mt-20">
                   <div className="shopCard__category text-accent">
                     <a data-barba href="#">House</a>, <a data-barba href="#">Interior</a>
                   </div>
                   <h4 className="shopCard__title text-base mt-8">Grey Velvet Chair</h4>
-                  <div className="shopCard__price text-sm text-dark mt-8">$350.00</div>
+                  <div className="shopCard__price text-sm text-dark mt-8">₹350.00</div>
                 </div>
               </div>
             </div>
@@ -815,6 +690,33 @@ function page() {
             </div> */}
   
           </div>
+
+             <div className="swiper-wrapper">
+    
+              <div className="swiper-slid">
+                <a data-barba href="#" className="portfolioCard -type-1 ratio">
+                  <div className="portfolioCard__image ratio ratio-1:1">
+                    <img
+                      className="ratio-img js-lazy"
+                      src="#"
+                      data-src="img/portfolio/card/1.jpg"
+                      alt="project image"
+                    />
+                  </div>
+                  <div className="portfolioCard__content px-30 py-30">
+                    {/* <span className="portfolioCard__category text-sm uppercase text-beige-dark">
+                      LIVING
+                    </span>
+                    <h3 className="portfolioCard__title text-lg fw-600 mt-8">
+                      London Apartments
+                    </h3> */}
+                  </div>
+                </a>
+              </div>
+    
+    
+            </div>
+
         </div>
       </div>
     </div>
@@ -822,158 +724,7 @@ function page() {
   
 
     
-<footer className="footer -type-1">
-
-  <div className="footer__top">
-    <div className="container">
-      <div className="row y-gap-48 justify-content-between">
-
-        {/* Contact */}
-        <div className="col-lg-3 col-md-6">
-          <div className="footer__item">
-            <h3 className="footer__title text-white">Contact</h3>
-
-            <div className="footer__content pr-20">
-              <div className="footer__content__item">
-                <p><span>T:</span> 9638812342</p>
-                <p><span>M:</span> mydecowall14@gmail.com</p>
-              </div>
-
-              <div className="footer__content__item">
-                <p>
-                  <span>A:</span> 8, Navnidhi Avenue, Gurukul, Ahmedabad
-                </p>
-              </div>
-
-              <div className="footer__content__item">
-                <a data-barba href="/contact-us" className="button -simple text-white">
-                  GET DIRECTIONS
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Our Services */}
-        <div className="col-lg-3 col-md-6">
-          <div className="footer__item">
-            <h3 className="footer__title text-white">OUR SERVICES</h3>
-
-            <div className="footer__content">
-              <div className="footer__content__item">
-                <a data-barba href="/services">PVC Wall Panels</a>
-              </div>
-              <div className="footer__content__item">
-                <a data-barba href="/services">PVC Ceilings</a>
-              </div>
-              <div className="footer__content__item">
-                <a data-barba href="/services">PVC Flooring</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Useful Links */}
-        <div className="col-lg-3 col-md-6">
-          <div className="footer__item">
-            <h3 className="footer__title text-white">USEFUL LINKS</h3>
-
-            <div className="footer__content">
-              <div className="footer__content__item"><a data-barba href="/">Home</a></div>
-              <div className="footer__content__item"><a data-barba href="/about-us">About Us</a></div>
-              <div className="footer__content__item"><a data-barba href="/services">Services</a></div>
-              <div className="footer__content__item"><a data-barba href="/contact-us">Contact Us</a></div>
-              <div className="footer__content__item"><a data-barba href="#">FAQ</a></div>
-              <div className="footer__content__item"><a data-barba href="#">Privacy Policy</a></div>
-            </div>
-          </div>
-        </div>
-
-        {/* Subscribe */}
-        <div className="col-lg-3 col-md-6">
-          <div className="footer__item">
-            <h3 className="footer__title text-white">SUBSCRIBE</h3>
-
-            <div className="footer__content">
-              <div className="footer__content__item">
-                <p>Get updates on new products, offers and interior trends.</p>
-              </div>
-
-              <div className="footer__newsletter">
-                <form action="#" method="POST">
-                  <input type="email" placeholder="Your Email" />
-                  <button type="submit">
-                    <i className="icon icon-send"></i>
-                  </button>
-                </form>
-              </div>
-
-              <div className="footer__socials">
-                <h3 className="footer__title text-white">FOLLOW US</h3>
-
-                <div className="footer__socials_content">
-                  <a data-barba href="#" className="text-white">
-                    <i className="fa fa-facebook"></i>
-                  </a>
-                  <a data-barba href="#" className="text-white">
-                    <i className="fa fa-instagram"></i>
-                  </a>
-                  <a data-barba href="#" className="text-white">
-                    <i className="fa fa-linkedin"></i>
-                  </a>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  {/* Bottom */}
-  <div className="footer__bottom">
-    <div className="container">
-      <div className="row align-items-center justify-content-between sm:justify-content-start">
-
-        <div className="col-auto sm:order-2">
-          <div className="footer__bottom_text">
-            © {new Date().getFullYear()} Decowalls. All rights reserved.
-          </div>
-        </div>
-
-        <div className="col-auto sm:order-1">
-          <div className="footer__logo">
-            <img
-      src="/img/logo1.png"
-      alt="Logo"
-      className="header__logo-img"
-      style={{ height: "50px", width: "auto" }}
-    />
-          </div>
-        </div>
-
-        <div className="col-auto sm:d-none">
-          <div className="footer__bottom_text">
-            Premium Interior Solutions
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  {/* Back Button */}
-  <div data-cursor className="backButton js-backButton">
-    <div className="nav -slider">
-      <div className="nav__item -left">
-        <i className="icon icon-right-arrow"></i>
-      </div>
-    </div>
-  </div>
-
-</footer>
+<Footer/>
     
     </div>
     

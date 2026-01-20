@@ -2,9 +2,13 @@ import "./globals.css";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Helix",
-  description: "Helix Website",
+  title: "Decowalls",
+  description: "Premium PVC wall panels, ceilings, and flooring solutions.",
+  icons: {
+    icon: "/img/logo1.png",
+  },
 };
+
 
 export default function RootLayout({ children }) {
   return (
