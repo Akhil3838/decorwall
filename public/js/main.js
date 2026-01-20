@@ -1956,13 +1956,14 @@ const Preloader = (function () {
 
   function registerEffects() {
 
-    // --- INITIAL ---
+    if (gsap.effects && gsap.effects.preloaderInitial) return;
+
     gsap.registerEffect({
       name: 'preloaderInitial',
       effect: () => {
         const tl = gsap.timeline();
 
-        if (!preloader || !document.body.classList.contains('preloader-visible')) {
+        if (!preloader) {
           cleanup();
           return tl;
         }
@@ -1990,116 +1991,55 @@ const Preloader = (function () {
       },
       extendTimeline: true,
     });
-
-    // --- SHOW ---
-    gsap.registerEffect({
-      name: 'preloaderShow',
-      effect: () => {
-        const tl = gsap.timeline();
-
-        if (!preloader) return tl;
-
-        document.documentElement.classList.add('html-overflow-hidden');
-        document.body.classList.add('preloader-visible');
-
-        tl
-          .set(progress, { opacity: 0, scale: 0.75 })
-          .set(progressInner, { scaleY: 0 })
-          .to(bg, {
-            ease: 'quart.inOut',
-            duration: 0.5,
-            scaleY: 1,
-          })
-          .to(progress, {
-            duration: 0.5,
-            ease: 'quart.out',
-            opacity: 1,
-            scale: 1,
-          })
-          .to(progressInner, {
-            scaleY: 1,
-            duration: 0.8,
-            ease: 'none',
-          }, '>-0.3');
-
-        return tl;
-      },
-      extendTimeline: true,
-    });
-
-    // --- HIDE ---
-    gsap.registerEffect({
-      name: 'preloaderHide',
-      effect: () => {
-        const tl = gsap.timeline();
-
-        if (!preloader) {
-          cleanup();
-          return tl;
-        }
-
-        return tl
-          .to(progress, {
-            duration: 0.4,
-            ease: 'quart.inOut',
-            opacity: 0,
-            scale: 0.8,
-          })
-          .to(bg, {
-            ease: 'quart.inOut',
-            duration: 0.5,
-            scaleY: 0,
-            onComplete: cleanup,
-          }, '>-0.4');
-      },
-      extendTimeline: true,
-    });
   }
 
   function cleanup() {
     document.documentElement.classList.remove('html-overflow-hidden');
     document.body.classList.remove('preloader-visible');
 
-    if (preloader) preloader.style.display = 'none';
-  }
-
-function init() {
-  if (isReady) return;
-  isReady = true;
-
-  if (!cacheDom()) {
-    cleanup();
-    return;
-  }
-
-  registerEffects();
-
-  const run = () => {
-    const tl = gsap.timeline();
-
-    if (tl.preloaderInitial) {
-      tl.preloaderInitial();
-    } else {
-      // 🚨 GSAP not ready → force hide
-      cleanup();
+    if (preloader) {
+      preloader.style.display = 'none';
     }
-  };
+  }
 
-  // ⏳ ensure GSAP + layout are ready (Next.js refresh fix)
-  requestAnimationFrame(() => {
-    requestAnimationFrame(run);
-  });
+  function hardFailSafe() {
+    setTimeout(() => {
+      cleanup();
+    }, 3000);
+  }
 
-  // 🛟 hard fail-safe (never allow stuck loader)
-  setTimeout(cleanup, 4000);
-}
+  function init() {
+    if (isReady) return;
+    isReady = true;
+
+    if (!cacheDom()) {
+      cleanup();
+      return;
+    }
+
+    registerEffects();
+
+    // 🔥 ALWAYS force animation on next frame
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const tl = gsap.timeline();
+
+        if (typeof tl.preloaderInitial === 'function') {
+          tl.preloaderInitial();
+        } else {
+          cleanup();
+        }
+      });
+    });
+
+    hardFailSafe();
+  }
 
   return {
     init,
   };
 
 })();
-
 /*--------------------------------------------------
   03. Header
 ---------------------------------------------------*/
@@ -2667,16 +2607,12 @@ const PageReveal = (function() {
 function initialReveal(callback) {
   let tl = gsap.timeline();
 
-  // ❌ DO NOT call preloader here anymore
-  // tl.preloaderInitial();
-
   tl = PageReveal.init(tl);
 
   tl.add(() => {
     if (typeof callback === 'function') callback();
   });
 }
-
 /*--------------------------------------------------
   05. Custom cursor
 ---------------------------------------------------*/
@@ -2836,25 +2772,6 @@ const Cursor = (function() {
       update();
     }
 
-window.addEventListener("load", function () {
-
-  customEasingsInit();
-  pageRevealEffects();
-  Preloader.init();
-
-  initComponents();
-
-  initialReveal(() => {
-    MainSliderReveal.animate();
-    MainSliderReveal2.animate();
-    MainSliderReveal3.animate();
-    MainSliderReveal4.animate();
-    MainSliderReveal5.animate();
-    MainSliderReveal9.animate();
-    MainSliderRevealAll.animate();
-  });
-
-});
   }
 
   return {
