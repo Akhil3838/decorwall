@@ -2063,21 +2063,36 @@ const Preloader = (function () {
     if (preloader) preloader.style.display = 'none';
   }
 
-  function init() {
-    if (isReady) return;
-    isReady = true;
+function init() {
+  if (isReady) return;
+  isReady = true;
 
-    if (!cacheDom()) {
-      cleanup();
-      return;
-    }
-
-    registerEffects();
-
-    // 🔥 RUN ONLY ONCE ON FIRST PAGE LOAD
-    const tl = gsap.timeline();
-    tl.preloaderInitial();
+  if (!cacheDom()) {
+    cleanup();
+    return;
   }
+
+  registerEffects();
+
+  const run = () => {
+    const tl = gsap.timeline();
+
+    if (tl.preloaderInitial) {
+      tl.preloaderInitial();
+    } else {
+      // 🚨 GSAP not ready → force hide
+      cleanup();
+    }
+  };
+
+  // ⏳ ensure GSAP + layout are ready (Next.js refresh fix)
+  requestAnimationFrame(() => {
+    requestAnimationFrame(run);
+  });
+
+  // 🛟 hard fail-safe (never allow stuck loader)
+  setTimeout(cleanup, 4000);
+}
 
   return {
     init,
