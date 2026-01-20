@@ -5,7 +5,7 @@ import Footer from "./components/home/Footer";
 
 export default function Home() {
   return (
-    <>
+    <div className="preloader-visible" data-barba="wrapper">
     {/* preloader start */}
 <div className="preloader js-preloader">
   <div className="preloader__bg"></div>
@@ -1092,6 +1092,6 @@ export default function Home() {
  </main>
 </div>
 
-    </>
+    </div>
   );
 }

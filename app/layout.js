@@ -54,7 +54,7 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="/css/main.css" />
       </head>
 
-      <body className="preloader-visible" data-barba="wrapper">
+      <body>
         {children}
 
         {/* Leaflet JS */}
